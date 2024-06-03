@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPT SaaS App</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Agent Status Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to GPT SaaS App</h1>
-    <p>This is a demo application using multiple GPT instances.</p>
+    <div class="container">
+        <h1>Agent Status Dashboard</h1>
+        <form id="generateAppForm">
+            <input type="text" id="userPrompt" placeholder="Enter your prompt here" required>
+            <button type="submit">Generate</button>
+        </form>
+        <div id="agentStatuses">
+            <div id="backend_developer" class="agent-card">
+                <h2>Backend Developer</h2>
+                <p><strong>Prompt:</strong> <span class="prompt">N/A</span></p>
+                <p><strong>Response:</strong> <span class="response">N/A</span></p>
+            </div>
+            <div id="frontend_developer" class="agent-card">
+                <h2>Frontend Developer</h2>
+                <p><strong>Prompt:</strong> <span class="prompt">N/A</span></p>
+                <p><strong>Response:</strong> <span class="response">N/A</span></p>
+            </div>
+            <div id="designer" class="agent-card">
+                <h2>Designer</h2>
+                <p><strong>Prompt:</strong> <span class="prompt">N/A</span></p>
+                <p><strong>Response:</strong> <span class="response">N/A</span></p>
+            </div>
+            <div id="tester" class="agent-card">
+                <h2>Tester</h2>
+                <p><strong>Prompt:</strong> <span class="prompt">N/A</span></p>
+                <p><strong>Response:</strong> <span class="response">N/A</span></p>
+            </div>
+        </div>
+    </div>
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
